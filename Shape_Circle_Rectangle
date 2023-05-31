@@ -1,0 +1,42 @@
+class Shape:
+    def __init__(self, color):
+        self.color = color
+
+    def get_area(self):
+        pass
+
+    def get_perimeter(self):
+        pass
+
+class Circle(Shape):
+    def __init__(self, color, radius):
+        super().__init__(color)
+        self.radius = radius
+
+    def get_area(self):
+        return 3.14 * self.radius ** 2
+
+    def get_perimeter(self):
+        return 2 * 3.14 * self.radius
+
+class Rectangle(Shape):
+    def __init__(self, color, width, height):
+        super().__init__(color)
+        self.width = width
+        self.height = height
+
+    def get_area(self):
+        return self.width * self.height
+
+    def get_perimeter(self):
+        return 2 * (self.width + self.height)
+
+# Creating instances of the classes
+circle = Circle("Red", 5)
+rectangle = Rectangle("Blue", 4, 6)
+
+# Calling the get_area() and get_perimeter() methods
+print("Circle Area:", circle.get_area())               # Output: Circle Area: 78.5
+print("Circle Perimeter:", circle.get_perimeter())     # Output: Circle Perimeter: 31.400000000000002
+print("Rectangle Area:", rectangle.get_area())         # Output: Rectangle Area: 24
+print("Rectangle Perimeter:", rectangle.get_perimeter())   # Output: Rectangle Perimeter: 20
